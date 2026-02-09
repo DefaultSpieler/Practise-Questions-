@@ -31,6 +31,17 @@ JOIN WEATHER AS YESTERDAY ON
     TODAY.RECORDDATE = DATE_ADD(YESTERDAY.RECORDDATE, INTERVAL 1 DAY) AND 
     TODAY.TEMPERATURE > YESTERDAY.TEMPERATURE;
 
+-- 610 Triangle Judgement 
+SELECT X, Y, Z, 
+CASE 
+    WHEN X + Y > Z
+     AND X + Z > Y
+     AND Y + Z > X
+    THEN 'Yes'
+    ELSE 'No'
+    END AS triangle
+FROM Triangle;
+
 -- 619 Biggest Single Number 
 SELECT MAX(NUM) AS num
 FROM (
