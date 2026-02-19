@@ -148,3 +148,90 @@ if __name__ == '__main__':
     print(result)
 
 #String Split and Join
+def split_and_join(line):
+    # write your code here
+    return line.replace(" ", "-")
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+
+#What's Your Name?
+def print_full_name(first, last):
+    # Write your code here
+    print(f"Hello {first} {last}! You just delved into python.")
+    
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+#Mutations
+def mutate_string(string, position, character):
+    return string[:position] + character + string[position + 1:]
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+#String Validators
+if __name__ == '__main__':
+    s = input()
+    
+    print(any(i.isalnum() for i in s))
+    print(any(i.isalpha() for i in s))
+    print(any(i.isdigit() for i in s))
+    print(any(i.islower() for i in s))
+    print(any(i.isupper() for i in s))
+
+#Text Wrap
+import textwrap
+
+def wrap(string, max_width):
+    final_str = ''
+    
+    for i in range(0, len(string), max_width):
+        final_str += f"{string[i:i+max_width]}\n"
+
+    return final_str
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
+#String Formatting
+def print_formatted(number):
+    # your code goes here
+    wid = len(bin(number)) - 2
+    for i in range(1, number+1):
+        print(f"{str(i).rjust(wid)} {oct(i)[2:].rjust(wid)} {hex(i)[2:].upper().rjust(wid)} {bin(i)[2:].rjust(wid)}")
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+
+#The Minion Game
+def minion_game(string):
+    # your code goes here
+    vowels = 'AEIOU'
+    stuart, kevin = 0, 0
+    n = len(string)
+    
+    for i in range(n):
+        if string[i] in vowels:
+            kevin += n-i
+        else:
+            stuart += n-i
+            
+    if stuart == kevin:
+        print("Draw")
+    elif stuart > kevin:
+        print(f"Stuart {stuart}")
+    else:
+        print(f"Kevin {kevin}")
+
+
