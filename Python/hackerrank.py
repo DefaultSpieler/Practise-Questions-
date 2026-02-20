@@ -234,4 +234,17 @@ def minion_game(string):
     else:
         print(f"Kevin {kevin}")
 
+#Merge the tools 
+def merge_the_tools(string, k):
+    # your code goes here
+    length = len(string)
+    
+    for i in range(0, length, k):
+        a = string[i:i+k]
+        
+        print("".join(dict.fromkeys(a)))
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+
 
