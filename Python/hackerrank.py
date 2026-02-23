@@ -247,4 +247,63 @@ if __name__ == '__main__':
     string, k = input(), int(input())
     merge_the_tools(string, k)
 
+#Sets
+#Introduction to Sets
+def average(array):
+    # your code goes here
+    temp_set = set(array)
+    length = len(temp_set)
+    
+    return sum(temp_set) / length
+    
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+
+#No Idea!
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+count_m, count_n = map(int, (input().split(" ")))
+array = list(map(int, input().split(" ")))
+a = set(map(int, input().split(" ")))
+b = set(map(int, input().split(" ")))
+
+happy = 0
+
+for num in array:
+    if num in a:
+        happy += 1
+    elif num in b:
+        happy -= 1
+    
+print(happy)
+
+#Symmetric Difference
+size_m = int(input())
+m = set(map(str, input().split(" ")))
+
+size_n = int(input())
+n = set(map(str, input().split(" ")))
+
+diff_m = m.difference(n) #all elements which exist in M not in N
+diff_n = n.difference(m) #all elements which exist in N not in M
+
+res = list(map(int, diff_m)) 
+res.extend(map(int, diff_n))
+res.sort()
+
+for num in res:
+    print(num)
+
+#Set .add()
+count = int(input())
+countries = set()
+
+for i in range(0, count):
+    countries.add(input())
+
+print(len(countries))
+
 
