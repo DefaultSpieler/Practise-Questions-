@@ -297,6 +297,45 @@ res.sort()
 for num in res:
     print(num)
 
+#Set .union() Operation
+count_eng = int(input())
+eng_roll = set(map(int, input().split(" ")))
+count_french = int(input())
+french_roll = set(map(int, input().split(" ")))
+
+union_paper = eng_roll | french_roll
+
+print(len(union_paper))
+
+#Set .intersection() Operation
+count_eng = int(input())
+eng_roll = set(map(int, input().split(" ")))
+count_french = int(input())
+french_roll = set(map(int, input().split(" ")))
+
+intersection_of_paper = eng_roll & french_roll
+
+print(len(intersection_of_paper))
+
+#Set .difference() Operation
+count_eng = int(input())
+eng_roll = set(map(int, input().split(" ")))
+count_french = int(input())
+french_roll = set(map(int, input().split(" ")))
+
+difference_in_eng = eng_roll - french_roll
+
+print(len(difference_in_eng))
+
+#Set .symmetric_difference() Operation
+count_eng = int(input())
+eng_roll = set(map(int, input().split(" ")))
+count_french = int(input())
+french_roll = set(map(int, input().split(" ")))
+
+sym_diff = eng_roll ^ french_roll
+print(len(sym_diff))
+
 #Set .add()
 count = int(input())
 countries = set()
@@ -305,5 +344,8 @@ for i in range(0, count):
     countries.add(input())
 
 print(len(countries))
+
+#Set Mutations
+
 
 
