@@ -1,0 +1,19 @@
+/* THE PADS */
+select name,
+case 
+    when lower(occupation) = 'doctor' 
+        then '(D)'
+    when lower(occupation) = 'singer'
+        then '(S)'
+    when lower(occupation) = 'actor'
+        then '(A)'
+    else '(P)'
+end       
+from occupations
+order by name ASC ;
+
+select distinct concat('There are a total of', ' ' ),
+count(name) over(partition by occupation) as total,
+concat(occupation, 's')
+from occupations
+order by total asc;
